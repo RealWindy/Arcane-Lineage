@@ -55,7 +55,7 @@ local Dropdown = Teleports:CreateDropdown({
 })
 local Button = Teleports:CreateButton({
     Name = "Teleport", 
-    Callback = function()
+    Callback = function(teleports) 
             
     end,
  })
