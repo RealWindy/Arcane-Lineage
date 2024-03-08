@@ -68,3 +68,5 @@ local Button = teleports:CreateButton({
         end    
     end,
  })
+
+ Rayfield:LoadConfiguration()
