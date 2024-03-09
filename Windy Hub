@@ -1,6 +1,15 @@
 -- Windy hub beta
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 --Getgenv
+getgenv().SelectedOption = nil
+
+function teleports()
+    if getgenv().SelectedOption == "Yarthul" then
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4921.06104, 48.6331215, -3113.92627, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+    elseif getgenv().SelectedOption == "Ourak" then
+         game.PLayers.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(814.842773, 49.1217041, -3217.45679, -0.602129459, -0.0336669236, 0.797688484, 0.0167112499, 0.998360217, 0.0547507405, -0.798223734, 0.0462973937, -0.6005795)
+    end
+end
 
 
 -- Window	
@@ -45,17 +54,5 @@ local Dropdown = Teleports:CreateDropdown({
         teleports()
     end
 })
-getgenv().SelectedOption = nil
-
-function teleports()
-    if getgenv().SelectedOption == "Yarthul" then
-         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4921.06104, 48.6331215, -3113.92627, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-    elseif getgenv().SelectedOption == "Ourak" then
-         game.PLayers.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(814.842773, 49.1217041, -3217.45679, -0.602129459, -0.0336669236, 0.797688484, 0.0167112499, 0.998360217, 0.0547507405, -0.798223734, 0.0462973937, -0.6005795)
-    end
-end
-
-getgenv().SelectedOption = nil
-
 
 Rayfield:LoadConfiguration()
