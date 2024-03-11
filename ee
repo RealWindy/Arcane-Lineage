@@ -1,11 +1,6 @@
---anti cheat bypass
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua",true))()
-
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua"))()
 -- Windy hub beta
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-
-
 -- Window	
 local Window = Rayfield:CreateWindow({
     Name = "Windy Hub",
