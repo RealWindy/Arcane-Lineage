@@ -47,7 +47,7 @@ local Toggle = Teleports:CreateToggle({
  local Toggle = Teleports:CreateToggle({
     Name = "Auto QTE",
     CurrentValue = false,
-    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Value)
         task.wait()
 local old2
@@ -61,10 +61,6 @@ old2 = hookmetamethod(game, "__namecall", function(self, ...)
   end
   return old2(self, ...)
 end)
-     -- WeaponList:
--- "Spear", "Magic", "Dagger", "Fist", "Sword"
-local Weapon = "Sword"
-
 for i,v in next, getgc() do
  if typeof(v) == "function" and islclosure(v) and not isexecutorclosure(v) then
      local Constants = debug.getconstants(v)
@@ -84,7 +80,7 @@ end
  local Toggle = Teleports:CreateToggle({
     Name = "Auto Dodge",
     CurrentValue = false,
-    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Flag = "Toggle3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Value)
         task.wait()
         local old
