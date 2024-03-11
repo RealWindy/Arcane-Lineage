@@ -1,5 +1,5 @@
 -- Windy hub beta
-local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()script.Parent = game.ReplicatedStorage
 -- Window	
 local Window = Rayfield:CreateWindow({
     Name = "Windy Hub",
@@ -35,8 +35,8 @@ local Toggle = Teleports:CreateToggle({
     Name = "Data Rollback",
     CurrentValue = false,
     Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function()
-        while task.wait() do
+    Callback = function(Value)
+        while task.wait(Value) do
             local ohTable1 = {
                 ["1"] = "\255"
         }
