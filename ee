@@ -49,18 +49,11 @@ local Toggle = Teleports:CreateToggle({
     CurrentValue = false,
     Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Value)
-        task.wait()
-local old2
-old2 = hookmetamethod(game, "__namecall", function(self, ...)
-  if self.Name == "RemoteFunction" and getnamecallmethod() == "FireServer" then
-      local args = {...}
-      if args[2] == Weapon.."QTE" then
-       args[1] = true
-       return old2(self, unpack(args))
-      end
-  end
-  return old2(self, ...)
-end)
+        -- WeaponList:
+-- "Spear", "Magic", "Dagger", "Fist", "Sword"
+local Weapon = "Sword"
+
+
 for i,v in next, getgc() do
  if typeof(v) == "function" and islclosure(v) and not isexecutorclosure(v) then
      local Constants = debug.getconstants(v)
@@ -75,27 +68,31 @@ for i,v in next, getgc() do
  end
 end
 
-    end,
- })
- local Toggle = Teleports:CreateToggle({
-    Name = "Auto Dodge",
-    CurrentValue = false,
-    Flag = "Toggle3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
-        task.wait()
-        local old
-        old = hookmetamethod(game, "__namecall", function(self, ...)
-          if self.Name == "RemoteFunction" and getnamecallmethod() == "FireServer" then
-              local args = {...}
-              if args[2] == "DodgeMinigame" and typeof(args[1]) == "table" then
-               args[1] = {true, true}
-               return old(self, unpack(args))
-              end
-          end
-          return old(self, ...)
-        end)
-    end
- })
+task.wait()
+local old
+old = hookmetamethod(game, "__namecall", function(self, ...)
+  if self.Name == "RemoteFunction" and getnamecallmethod() == "FireServer" then
+      local args = {...}
+      if args[2] == "DodgeMinigame" and typeof(args[1]) == "table" then
+       args[1] = {true, true}
+       return old(self, unpack(args))
+      end
+  end
+  return old(self, ...)
+end)
 
- loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua"))()
+task.wait()
+local old2
+old2 = hookmetamethod(game, "__namecall", function(self, ...)
+  if self.Name == "RemoteFunction" and getnamecallmethod() == "FireServer" then
+      local args = {...}
+      if args[2] == Weapon.."QTE" then
+       args[1] = true
+       return old2(self, unpack(args))
+      end
+  end
+  return old2(self, ...)
+end)
+ })
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua"))()
 Rayfield:LoadConfiguration()
