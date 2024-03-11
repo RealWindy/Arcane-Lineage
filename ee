@@ -1,4 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua"))()
 -- Windy hub beta
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Window	
@@ -101,4 +100,6 @@ end
         end)
     end
  })
+
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua"))()
 Rayfield:LoadConfiguration()
