@@ -44,6 +44,5 @@ local Toggle = Teleports:CreateToggle({
     end,
  })
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua"))()
 
 Rayfield:LoadConfiguration()
